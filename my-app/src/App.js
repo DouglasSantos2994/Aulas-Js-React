@@ -32,53 +32,67 @@ function App() {
     }
   ]
 
-  const comida = [
+  const frutas = [
 
     {
-      nome: "Cristiano Ronaldo",
-      idade: 37,
-      time: "Real Madrid",
-      melhorDoMundo: true
+      citricas: "Abacaxi",
+      vermelhas: "Morango",
+      exotica: "Lichia ",
+
     },
 
     {
-      nome: "Toni Kross",
-      idade: 32,
-      time: "Real Madrid",
-      melhorDoMundo: false
+      citricas: "Limão",
+      vermelhas: "Amora",
+      exotica: "Pitaya ",
+
     },
 
     {
-      nome: "Lionel Messi",
-      idade: 34,
-      time: "Paris Saint-Germain",
-      melhorDoMundo: true
+      citricas: "Abacaxi",
+      vermelhas: "Framboesa",
+      exotica: "Romã",
+
     },
-
-
 
   ]
 
-  const filtrando = futebol.filter(jogadores => {
+  const craques = futebol.filter(jogadores => {
     return jogadores.melhorDoMundo === false
+  })
+
+  const melhoresFrutas = frutas.filter(comida => {
+    return comida.citricas === "Abacaxi"
   })
 
   return (
 
     <div className="App">
       {
-        filtrando.map(jogadores => {
+        craques.map(jogadores => {
 
           return (
             <div className="box">
               <p> Nome: {jogadores.nome} </p>
               <p> Idade: {jogadores.idade}</p>
-              <p>Time:{jogadores.time}</p>
+              <p>Time: {jogadores.time}</p>
             </div>
           )
         })
       }
 
+      {
+        melhoresFrutas.map(comida => {
+
+          return (
+            <div className="box">
+              <p> Frutas Citricas: {comida.citricas} </p>
+              <p> Frutas Citricas: {comida.vermelhas} </p>
+              <p> Frutas Citricas: {comida.exotica} </p>
+            </div>
+          )
+        })
+      }
     </div>
   );
 }
