@@ -2,72 +2,135 @@ import './App.css';
 
 function App() {
 
-  const familia = [
+  const futebol = [
     {
-      nome: "Douglas",
-      idade: 28,
-      dataDeNascimento: "29/01/1994",
-      telefone: "(11) 93023-4589",
-      nomeDaMae: "Edileide",
-      nomeDoPai: "Cicero",
+      nome: "Messi",
+      eBom: true,
+      especialidades: [
+        {
+          dible: "Pedalada",
+          chute: "Colocado",
+          gols: "Cabeceio",
+        }
+      ],
+
+      melhorDoMundo: [
+        {
+          time: "Barcelona",
+          ganhouCopa: true
+        },
+
+        {
+          time: "Argentina",
+          ganhouCopa: false
+        }
+      ],
     },
 
     {
-      nome: "Diego",
-      idade: 31,
-      dataDeNascimento: "25/08/1990",
-      telefone: "(11) 95566-7788",
-      nomeDaMae: "Edileuza",
-      nomeDoPai: "",
+      nome: "Cristiano Ronaldo",
+      eBom: true,
+      especialidades: [
+        {
+          dible: "Pedalada",
+          chute: "Forte",
+          gols: "Falta",
+        }
+      ],
+
+      melhorDoMundo: [
+        {
+          time: "Real Madrid",
+          ganhouCopa: true
+        },
+        {
+          time: "Portugal",
+          ganhouCopa: false
+        }
+      ],
     },
 
     {
-      nome: "William",
-      idade: 30,
-      dataDeNascimento: "10/04/1990",
-      telefone: "(11) 99876-5432",
-      nomeDaMae: "Neide",
-      nomeDoPai: "Sidney",
+      nome: "Ronaldo",
+      eBom: true,
+      especialidades: [
+        {
+          dible: "Elastico",
+          chute: "Cavadinha",
+          gols: "Colocado",
+        }
+      ],
+
+      melhorDoMundo: [
+        {
+          time: "Real Madrid",
+          ganhouCopa: true
+        },
+
+        {
+          time: "Brasil",
+          ganhouCopa: true
+        }
+      ],
     },
 
     {
-      nome: "Patrick",
-      idade: 27,
-      dataDeNascimento: "23/07/1996",
-      telefone: "(11) 91234-5678",
-      nomeDaMae: "Maria",
-      nomeDoPai: "",
-    },
+      nome: "Romario",
+      eBom: true,
+      especialidades: [
+        {
+          dible: "Elastico",
+          chute: "Forte",
+          gols: "Penalty",
+        }
+      ],
 
-    {
-      nome: "Wilker",
-      idade: 26,
-      dataDeNascimento: "22/06/1995",
-      telefone: "(11) 91020-3040",
-      nomeDaMae: "Neide",
-      nomeDoPai: "Sidney",
-    },
+      melhorDoMundo: [
+        {
+          time: "Barcelona",
+          ganhouCopa: true
+        },
 
+        {
+          time: "Brasil",
+          ganhouCopa: true
+        }
+      ],
+    },
   ]
-
 
 
   return (
 
     <div className="App">
       {
-        familia.map(item => {
+        futebol.map(jogadores => {
 
           return (
             <div className="box">
-              <p> Nome: {item.nome} </p>
-              <p> Idade: {item.idade}</p>
-              <p> Data de nascimento:{item.dataDeNascimento}</p>
-              <p> Telefone: {item.telefone}</p>
-              <p> Nome da Mãe: {item.nomeDaMae}</p>
-              {item.nomeDoPai &&
-                <p> Nome do Pai:{item.nomeDoPai}</p>
+              <p> Nome: {jogadores.nome} </p>
+
+              {jogadores.especialidades.map(caracteristicas => {
+
+                return (
+                  <>
+                    <p> Dible:{caracteristicas.dible} </p>
+                    <p> Chute: {caracteristicas.chute} </p>
+                    <p> Gols {caracteristicas.gols} </p>
+                  </>
+                )
+              })}
+
+              {jogadores.melhorDoMundo.map(craque => {
+
+                return (
+                  <>
+                    <p> Time/Seleção:{craque.time} </p>
+
+                  </>
+                )
               }
+              )}
             </div>
           )
         })
