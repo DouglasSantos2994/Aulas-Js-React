@@ -1,21 +1,27 @@
 import './App.css';
-
-let conta = 4
-let alerta = "Você conseguiu"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/index';
+import Primeiro from './pages/primeiro/index'
+import Segundo from './pages/segundo/';
+import Terceiro from './pages/terceiro';
 
 function App() {
-
   return (
-    <div className="box">
-      <form>
-        <label>Cálculo:</label>
-        <input onChange={(e) => { alert(JSON.parse(e.target.value) + conta)}} />
-        <div className="frase" onClick={() => {alert(alerta)}}>
-         Você consegue?
-        </div>
-      </form>
-    </div>
-  );
+    <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+      </Routes>
+      <Routes>
+        <Route path='/primeiro' element={<Primeiro/>} />
+      </Routes>
+      <Routes>
+        <Route path='/segundo' element={<Segundo/>} />
+      </Routes>
+      <Routes>
+        <Route path='/terceiro' element={<Terceiro/>} />
+      </Routes>
+    </BrowserRouter>
+  )
 }
 
 export default App;
