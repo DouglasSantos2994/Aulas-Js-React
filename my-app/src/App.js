@@ -1,22 +1,28 @@
 import './App.css';
-import {Texto, Salgados} from "./Utils"
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import Home from './pages/index';
+import Futebol from './pages/Futebol'
+import Basquete from './pages/Basquete';
+import Volei from './pages/Volei';
+import Surf from './pages/Surf';
 
-
-const assado = "esfirra."
-const frito = "coxinha"
 
 
 function App() {
-
   return (
-    <div className="box">
-      <form>
-        <label>Aula</label>
-        <input onChange={(e) => { Texto(e.target.value, 'e muito louco') }} />
-        <button className="button" onClick={(e) => {Salgados(assado,frito)}}>Enviar</button>
-      </form>
-    </div>
-  );
+  <BrowserRouter>
+      <Routes>
+        <Route path='/' element={<Home/>} />
+        <Route path='/futebol' element={<Futebol/>} />
+        <Route path='/basquete' element={<Basquete/>} />
+        <Route path='/volei' element={<Volei/>} />
+        <Route path='/surf' element={<Surf/>} />
+      </Routes>
+      
+     
+      
+    </BrowserRouter>
+  )
 }
 
 export default App;
