@@ -1,9 +1,5 @@
 import './App.css';
-import {Texto, Salgados} from "./Utils"
-
-
-const assado = "esfirra."
-const frito = "coxinha"
+import {Musica, Futebol} from "./utils"
 
 
 function App() {
@@ -11,9 +7,10 @@ function App() {
   return (
     <div className="box">
       <form>
-        <label>Aula</label>
-        <input onChange={(e) => { Texto(e.target.value, 'e muito louco') }} />
-        <button className="button" onClick={(e) => {Salgados(assado,frito)}}>Enviar</button>
+        <label>Musica</label>
+        <input onChange={(e) => { Musica(e.target.value) }} />
+        <label>Futebol</label>
+        <input  onChange={(e) => {Futebol(e.target.value)}}></input>
       </form>
     </div>
   );
