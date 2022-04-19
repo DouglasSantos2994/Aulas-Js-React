@@ -1,10 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom'
 import Home from './pages/index';
-import Futebol from './pages/Futebol'
-import Basquete from './pages/Basquete';
-import Volei from './pages/Volei';
-import Surf from './pages/Surf';
+import Lojas from './pages/Lojas'
+
 
 
 
@@ -13,10 +11,7 @@ function App() {
   <BrowserRouter>
       <Routes>
         <Route path='/' element={<Home/>} />
-        <Route path='/futebol' element={<Futebol/>} />
-        <Route path='/basquete' element={<Basquete/>} />
-        <Route path='/volei' element={<Volei/>} />
-        <Route path='/surf' element={<Surf/>} />
+        <Route path='/Lojas' element={<Lojas/>} />
       </Routes>
       
      

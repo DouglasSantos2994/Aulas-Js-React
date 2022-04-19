@@ -1,20 +1,24 @@
- import {Esporte} from '../utils'
 
 
-function Home() {
-
+ function Home() {
+    let valor
+    const digite = (valorDigitado) => {
+        valor = valorDigitado
+    }
+    const click = () => {
+        window.location.href = `Lojas?loja=${valor}`
+    }
     return (
-
-        <div>
-
-            <ul>
-                <li onClick={() => Esporte('/futebol') }>Futebol</li>
-                <li onClick={() => Esporte('/basquete') }>Basquete</li>
-                <li onClick={() => Esporte('/volei') }>Volei</li>
-                <li onClick={() => Esporte('/surf') }>Surf</li>
-            </ul>
+        <div className="box">
+            <form>
+                <input onChange={(e) => { digite(e.target.value) }} />
+                <button onClick={(e) => {
+                    e.preventDefault()
+                    click()
+                }}
+                >Enviar</button>
+            </form>
         </div>
     )
 }
-
 export default Home;

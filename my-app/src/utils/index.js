@@ -1,5 +1,5 @@
 
 
-export  const Esporte = (endereco)=> {
-    window.location.href = endereco
-}
+// export  const SuperLojas = (endereco)=> {
+//     window.location.href = endereco
+// }
