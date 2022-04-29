@@ -1,15 +1,19 @@
-
-
-.box{
+.container{
   display: flex;
   flex-direction: column;
-  border: 1px solid;
+}
+
+.box{
+ border: 1px solid;
+ width: 100px;
   margin-left: 20px;
   margin-top: 20px;
-  width: 150px;
-  height: 150px;
   padding-left: 70px;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-right: 70px;
+}
+
+.botoes{
+  margin: 10px;
 }
