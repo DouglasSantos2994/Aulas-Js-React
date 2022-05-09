@@ -2,7 +2,7 @@ import "./App.css";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import Marvel from "./pages/Marvel";
-import RealMadrid from "./pages/RealMadrid";
+import Dc from "./pages/Dc";
 
 function App() {
   return (
@@ -14,7 +14,7 @@ function App() {
         <Route path="/marvel" element={<Marvel />} />
       </Routes>
       <Routes>
-        <Route path="/realMadrid" element={<RealMadrid />} />
+        <Route path="/dc" element={<Dc />} />
       </Routes>
     </BrowserRouter>
   );
