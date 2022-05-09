@@ -1,13 +1,10 @@
 import React from "react";
 
-export default function Links({ link }) {
-
+const Links = ({ link, texto }) => {
   return (
-    <div className="box">
-      {link &&
-        <a href="/">Home </a>
-      }
-
-    </div>
+    <>
+      <a href={link}>{texto} </a>
+    </>
   );
-}
+};
+export default Links;
