@@ -1,61 +1,32 @@
-import React, { useState, useEffect } from "react";
-import axios from "axios";
+import React, { useState } from "react";
 
 const Home = () => {
-  const [resposta, setResposta] = useState();
+  const [conta, setConta] = useState();
 
-  const [mapear, setMaper] = useState([]);
+  const enviar = () => {
+    localStorage.setItem("nome", "Douglas");
+    window.location.href = "/local";
+  };
 
-  useEffect(() => {
-    axios
-      .get("https://aula-14-133cc-default-rtdb.firebaseio.com/.json")
-      .then(function (response) {
-        setResposta(response.data);
-      });
-  }, [mapear]);
-
-  const filmes =
-    resposta &&
-    Object.values(resposta?.catalogo).filter((item) => {
-      console.log("item", item);
-      return item.tipo === "Filmes";
-    });
-
-  const series =
-    resposta &&
-    Object.values(resposta?.catalogo).filter((item) => {
-      return item.tipo === "series";
-    });
+  const session = () => {
+    const multiplicacao = conta * 10;
+    sessionStorage.setItem("numero", multiplicacao);
+    window.location.href = "/session";
+  };
 
   return (
     <>
-      <h2>Filmes</h2>
-      {filmes &&
-        Object.entries(filmes).map((assistir, index) => {
-          return (
-            <div key={index}>
-              <div className="box">
-                <p> {assistir[1].titulo} </p>
-                <p> {assistir[1].genero} </p>
-                <img width="100" src={assistir[1].imagem} />
-              </div>
-            </div>
-          );
-        })}
+      <div>
+        <p>Veja o nome</p>
+        <button onClick={() => enviar()}>Douglas</button>
+        <br />
+        <br />
+      </div>
+      <div>
+        <input onChange={(e) => setConta(e.target.value)} />
 
-      <h2>Séries</h2>
-      {series &&
-        Object.entries(series).map((assistir, index) => {
-          return (
-            <div key={index}>
-              <div className="box">
-                <p> {assistir[1].titulo} </p>
-                <p> {assistir[1].genero} </p>
-                <img width="100" src={assistir[1].imagem} />
-              </div>
-            </div>
-          );
-        })}
+        <button onClick={() => session()}>Calcular</button>
+      </div>
     </>
   );
 };
