@@ -1,31 +1,28 @@
 import React, { useState } from "react";
 
 const Home = () => {
-  const [conta, setConta] = useState();
+  const [dados, setDados] = useState();
+  const [senha, setSenha] = useState();
 
   const enviar = () => {
-    localStorage.setItem("nome", "Douglas");
+    localStorage.setItem("dados", dados);
+    localStorage.setItem("senha", senha);
     window.location.href = "/local";
-  };
-
-  const session = () => {
-    const multiplicacao = conta * 10;
-    sessionStorage.setItem("numero", multiplicacao);
-    window.location.href = "/session";
   };
 
   return (
     <>
       <div>
-        <p>Veja o nome</p>
-        <button onClick={() => enviar()}>Douglas</button>
+        <h1>Login</h1>
+        <label>Email:</label>
+        <input onChange={(e) => setDados(e.target.value)} />
         <br />
         <br />
-      </div>
-      <div>
-        <input onChange={(e) => setConta(e.target.value)} />
-
-        <button onClick={() => session()}>Calcular</button>
+        <label>Senha:</label>
+        <input onChange={(e) => setSenha(e.target.value)} />
+        <button onClick={() => enviar()}>Entrar</button>
+        <br />
+        <br />
       </div>
     </>
   );
