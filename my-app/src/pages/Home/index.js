@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { Button } from "hubchain-storybook";
 const Home = () => {
   const [dados, setDados] = useState();
   const [senha, setSenha] = useState();
@@ -23,6 +23,13 @@ const Home = () => {
         <button onClick={() => enviar()}>Entrar</button>
         <br />
         <br />
+        <Button
+          label="Testando"
+          size={"large"}
+          key="test"
+          onClick={enviar()}
+          primary={true}
+        />
       </div>
     </>
   );
